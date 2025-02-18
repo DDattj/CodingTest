@@ -12,22 +12,16 @@
 
 <hr>
 
-<h5>제한사항</h5>
+### 공부노트
+readLine 이라는것이 주어졌을때 뭔지 몰라서 전부 삭제함
+```
+let str = ""
+print (str)
+```
+라고 했는데 이렇게 했더니 'Output size differs' 오류가 발생함. 말 그대로 빈 문자열 출력인지라 특정 문자열 출력은 안됨.
+간만에 코딩 다시 하려니 너무 헷갈리네.
 
-<ul>
-<li>1 ≤ <code>str</code>의 길이 ≤ 1,000,000</li>
-<li><code>str</code>에는 공백이 없으며, 첫째 줄에 한 줄로만 주어집니다.</li>
-</ul>
-
-<hr>
-
-<h5>입출력 예</h5>
-
-<p>입력 #1</p>
-<div class="highlight"><pre class="codehilite"><code>HelloWorld!
-</code></pre></div>
-<p>출력 #1</p>
-<div class="highlight"><pre class="codehilite"><code>HelloWorld!
-</code></pre></div>
+**readLine() 함수는 제공된 문자열을 읽어오는 함수. 이 함수 사용하면 사용자가 입력한 문자열을 반환하며, 입력이 없으면 nil을 반환함**
+ 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
