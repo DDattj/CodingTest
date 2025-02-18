@@ -23,5 +23,6 @@ print (str)
 
 **readLine() 함수는 제공된 문자열을 읽어오는 함수. 이 함수 사용하면 사용자가 입력한 문자열을 반환하며, 입력이 없으면 nil을 반환함**
  
+<hr>
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
