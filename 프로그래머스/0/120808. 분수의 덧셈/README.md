@@ -2,17 +2,6 @@
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120808) 
 
-### 성능 요약
-
-메모리: 16.1 MB, 시간: 0.02 ms
-
-### 구분
-
-코딩테스트 연습 > 코딩테스트 입문
-
-### 채점결과
-
-정확성: 100.0<br/>합계: 100.0 / 100.0
 
 ### 제출 일자
 
@@ -24,55 +13,36 @@
 
 <hr>
 
-<h5>제한사항</h5>
+### 공부노트
+코드 짜는거 몰라서 방법을 구상하고 ai돌림
 
-<ul>
-<li>0 &lt;<code>numer1</code>, <code>denom1</code>,&nbsp;<code>numer2</code>, <code>denom2</code> &lt; 1,000</li>
-</ul>
+1. denom1과 denom2 최소공배수 구하기 (최대공약수는 gcd, 최소공배수는 lcm이라고 함)
+2. finalD(result에서 뒷 숫자)는 최소공배수로 출력하도록
+3. numer1과 numer2는 각각 denom1과 denom2가 finalD가 되기 위해 몇을 곱했는지 찾고 곱한 수를 각각 곱해주기
+4. finalN(result에서 앞 숫자)는 numer1과 numer2의 합을 찾기
+5. [finalN, finalD]로 표시되도록 출력
+6. 기약분수 있으면 나눠야 함 -> 이거 안해서 테스트 통과 실패함
+```
+// 최대공약수 구하기
+func gcd(_ a: Int, _ b: Int) -> Int {
+    return b == 0 ? a : gcd(b, a % b)
+}
 
+// 최소공배수 구하기
+func lcm(_ a: Int, _ b: Int) -> Int {
+    return abs(a * b) / gcd(a, b)
+}
+```
+재귀함수 쓰는법이 제일 어려워서 이 부분만 분석해보자면 
+
+gcd(최대공약수) 구하는 법을 만들기 = b가 0이면 a를 반환, b가 0이 아니면 뒤의 것을 실행
+(유클리드 호제법을 쓰라고 하는데 나는 약수 나열법 밖에 몰라서 이 식이 생소함)
+
+lcm(최소공배수) 구하는 법을 만들기 = a와 b를 곱하기(abs 는 수가 음수가 되지 않도록 절대값을 가져오라고 명령하는 함수)
++ 곱한 값을 최대공약수로 나누면 최소공배수가 구해짐
+
+**수학적 지식 부족으로 인한 오답.. 코드 짤 때 이게 얼마나 쓰일지는 몰라도 우선 재귀함수 기호들은 외워두면 좋을것 같음**
+ 
 <hr>
-
-<h5>입출력 예</h5>
-<table class="table">
-        <thead><tr>
-<th>numer1</th>
-<th>denom1</th>
-<th>numer2</th>
-<th>denom2</th>
-<th>result</th>
-</tr>
-</thead>
-        <tbody><tr>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>[5, 4]</td>
-</tr>
-<tr>
-<td>9</td>
-<td>2</td>
-<td>1</td>
-<td>3</td>
-<td>[29, 6]</td>
-</tr>
-</tbody>
-      </table>
-<hr>
-
-<h5>입출력 예 설명</h5>
-
-<p>입출력 예 #1</p>
-
-<ul>
-<li>1 / 2 + 3 / 4 = 5 / 4입니다. 따라서 [5, 4]를 return 합니다.</li>
-</ul>
-
-<p>입출력 예 #2</p>
-
-<ul>
-<li>9 / 2 + 1 / 3 = 29 / 6입니다. 따라서 [29, 6]을 return 합니다.</li>
-</ul>
-
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
