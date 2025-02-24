@@ -29,16 +29,12 @@ func solution(_ numer1: Int, _ denom1: Int, _ numer2: Int, _ denom2: Int) -> [In
 }
 
 /*
-    //최대공약수 공식 정해주기
-    int gcd(int a, int b) {
-//한쪽 수가 0이면 남은 수가 최대공약수이므로 그것을 출력, 만약 0이 아니면 
-        return b == 0 ? a : gcd(b, a % b);
-    }
-
-//denom1과 denom2 최소공배수 구하기 (최대공약수는 gcd, 최소공배수는 lcm이라고 함)
-//finalD(result에서 뒷 숫자)는 최소공배수로 출력하도록
-//numer1과 numer2는 각각 denom1과 denom2가 finalD가 되기 위해 몇을 곱했는지 찾고 곱한 수를 각각 곱해주기
-//finalN(result에서 앞 숫자)는 numer1과 numer2의 합을 찾기
-//[finalN, finalD]로 표시되도록 출력
+    
+1. denom1과 denom2 최소공배수 구하기 (최대공약수는 gcd, 최소공배수는 lcm이라고 함)
+2. finalD(result에서 뒷 숫자)는 최소공배수로 출력하도록
+3. numer1과 numer2는 각각 denom1과 denom2가 finalD가 되기 위해 몇을 곱했는지 찾고 곱한 수를 각각 곱해주기
+4. finalN(result에서 앞 숫자)는 numer1과 numer2의 합을 찾기
+5. [finalN, finalD]로 표시되도록 출력
+6. 기약분수 있으면 나눠야 함 -> 이거 안해서 테스트 통과 실패함
 
 */
