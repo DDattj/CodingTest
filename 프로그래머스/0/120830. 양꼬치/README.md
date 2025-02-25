@@ -2,18 +2,6 @@
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120830) 
 
-### 성능 요약
-
-메모리: 16.4 MB, 시간: 0.01 ms
-
-### 구분
-
-코딩테스트 연습 > 코딩테스트 입문
-
-### 채점결과
-
-정확성: 100.0<br/>합계: 100.0 / 100.0
-
 ### 제출 일자
 
 2025년 02월 25일 16:37:20
@@ -24,51 +12,28 @@
 
 <hr>
 
-<h5>제한사항</h5>
+### 공부노트
+오랜만에 내 머리로 짠 코드라 기쁘다.. 우선 순서는 이렇게 됨
+1. n*12000을 계산한 값을 출력 = N
+2. n을 10으로 나눠서 나오는 몫을 k에서 뺌
+3. 2의 과정을 거쳤을때 k*2000을 함 = K
+4. N+K를 출력
 
-<ul>
-<li>0 &lt; <code>n</code> &lt; 1,000</li>
-<li>n / 10 ≤ <code>k</code> &lt; 1,000</li>
-<li>서비스로 받은 음료수는 모두 마십니다.</li>
-</ul>
+```
+import Foundation
+
+func solution(_ n:Int, _ k:Int) -> Int {
+    let N = n * 12000
+    let quotient = n / 10
+    let K = (k - quotient) * 2000
+    let answer = N + K
+    
+    return answer
+}
+```
+
+**중간에 살짝 실수를 했는데 나누기 몫을 구할때는 /, 나머지를 구할때는 %**
 
 <hr>
-
-<h5>입출력 예</h5>
-<table class="table">
-        <thead><tr>
-<th>n</th>
-<th>k</th>
-<th>result</th>
-</tr>
-</thead>
-        <tbody><tr>
-<td>10</td>
-<td>3</td>
-<td>124,000</td>
-</tr>
-<tr>
-<td>64</td>
-<td>6</td>
-<td>768,000</td>
-</tr>
-</tbody>
-      </table>
-<hr>
-
-<h5>입출력 예 설명</h5>
-
-<p>입출력 예 #1</p>
-
-<ul>
-<li>10인분을 시켜 서비스로 음료수를 하나 받아 총 10 * 12000 + 3 * 2000 - 1 * 2000 = 124,000원입니다.</li>
-</ul>
-
-<p>입출력 예 #2</p>
-
-<ul>
-<li>64인분을 시켜 서비스로 음료수를 6개 받아 총 64 * 12000 + 6 * 2000 - 6 * 2000 =768,000원입니다.</li>
-</ul>
-
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
