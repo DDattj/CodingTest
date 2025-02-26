@@ -2,18 +2,6 @@
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120821) 
 
-### 성능 요약
-
-메모리: 16.4 MB, 시간: 0.09 ms
-
-### 구분
-
-코딩테스트 연습 > 코딩테스트 입문
-
-### 채점결과
-
-정확성: 100.0<br/>합계: 100.0 / 100.0
-
 ### 제출 일자
 
 2025년 02월 26일 15:09:26
@@ -23,58 +11,21 @@
 <p>정수가 들어 있는 배열 <code>num_list</code>가 매개변수로 주어집니다. <code>num_list</code>의 원소의 순서를 거꾸로 뒤집은 배열을 return하도록 solution 함수를 완성해주세요.</p>
 
 <hr>
+### 공부노트
+조금 복잡하게 생각했는데 의외로 간단한 코드였다.
+```
+import Foundation
 
-<h5>제한사항</h5>
+func solution(_ num_list:[Int]) -> [Int] {
+    return Array(num_list.reversed())
+}
+```
+Array()를 사용하는 이유는 숫자를 반대로 출력한 결과를 **배열로 변환하기 위함**
+reversed() 메서드는 배열을 뒤집은 결과를 반환하지만, 이 결과는 배열이 아니라 **ReversedCollection이라는 타입을 반환**
+실제로는 배열이 아님
 
-<ul>
-<li>1 ≤ <code>num_list</code>의 길이 ≤ 1,000</li>
-<li>0 ≤ <code>num_list</code>의 원소 ≤ 1,000</li>
-</ul>
+근데 ReversedCollection 타입이라는게 뭔지 모르겠음
 
 <hr>
-
-<h5>입출력 예</h5>
-<table class="table">
-        <thead><tr>
-<th>num_list</th>
-<th>result</th>
-</tr>
-</thead>
-        <tbody><tr>
-<td>[1, 2, 3, 4, 5]</td>
-<td>[5, 4, 3, 2, 1]</td>
-</tr>
-<tr>
-<td>[1, 1, 1, 1, 1, 2]</td>
-<td>[2, 1, 1, 1, 1, 1]</td>
-</tr>
-<tr>
-<td>[1, 0, 1, 1, 1, 3, 5]</td>
-<td>[5, 3, 1, 1, 1, 0, 1]</td>
-</tr>
-</tbody>
-      </table>
-<hr>
-
-<h5>입출력 예 설명</h5>
-
-<p>입출력 예 #1</p>
-
-<ul>
-<li><code>num_list</code>가 [1, 2, 3, 4, 5]이므로 순서를 거꾸로 뒤집은 배열 [5, 4, 3, 2, 1]을 return합니다.</li>
-</ul>
-
-<p>입출력 예 #2</p>
-
-<ul>
-<li><code>num_list</code>가 [1, 1, 1, 1, 1, 2]이므로 순서를 거꾸로 뒤집은 배열 [2, 1, 1, 1, 1, 1]을 return합니다.</li>
-</ul>
-
-<p>입출력 예 #3</p>
-
-<ul>
-<li><code>num_list</code>가 [1, 0, 1, 1, 1, 3, 5]이므로 순서를 거꾸로 뒤집은 배열 [5, 3, 1, 1, 1, 0, 1]을 return합니다.</li>
-</ul>
-
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
