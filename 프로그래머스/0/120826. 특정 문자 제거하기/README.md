@@ -2,17 +2,6 @@
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120826) 
 
-### 성능 요약
-
-메모리: 16.6 MB, 시간: 0.24 ms
-
-### 구분
-
-코딩테스트 연습 > 코딩테스트 입문
-
-### 채점결과
-
-정확성: 100.0<br/>합계: 100.0 / 100.0
 
 ### 제출 일자
 
@@ -24,52 +13,44 @@
 
 <hr>
 
-<h5>제한사항</h5>
+### 공부노트
+코드 짜는거 몰라서 방법을 구상하고 ai돌림
 
-<ul>
-<li>1 ≤ <code>my_string</code>의 길이 ≤ 100</li>
-<li><code>letter</code>은 길이가 1인 영문자입니다.</li>
-<li><code>my_string</code>과 <code>letter</code>은 알파벳 대소문자로 이루어져 있습니다.</li>
-<li>대문자와 소문자를 구분합니다.</li>
-</ul>
+1. 문자열 my_string에서 letter를 찾기
+2. 없으면 my_string 그대로 출력
+3. 있으면 letter를 뺀 후 남은 문자열을 출력
+```
+func solution(_ my_string: String, _ letter: String) -> String {
+//걸러낸것을 출력
+    if my_string.contains(letter) {
+        return my_string.replacingOccurrences(of: letter, with: "")
+    } else {
+//예외상황에선 그대로 출력
+        return my_string
+    }
+}
+```
+**replacingOccurrences(of: letter, with: "")** 는 문자열에서 특정 문자를 어떠한 방식으로 대체해달라는 메서드로, 즉 letter를 공백으로 대체해달라는 말이다.
+이렇게 해도 되긴 하는데 다른 더 쉬운 방법이 존재함.
+무엇을 무엇으로 대체해서 출력해달라가 아니라 **출력과정에서 문자를 필터링 해달라**고 요청하면 더 빠르고 코드도 덜 복잡해짐
+```
+func solution(_ my_string: String, _ letter: String) -> String {
+//걸러낸것을 출력
+    if my_string.contains(letter) {
+        return my_string.replacingOccurrences(of: letter, with: "")
+    } else {
+//예외상황에선 그대로 출력
+        return my_string
+    }
+}
+```
+func solution(_ my_string:String, _ letter:String) -> String {
+    return my_string.filter{String($0) != letter}
+}
+```
+String($0) != letter
+첫 문자부터 시작해서 letter가 아닌것을 필터링 하라는 말. letter가 아닌것을 리턴하면 원하는 문자열을 출력할 수 있음
 
 <hr>
-
-<h5>입출력 예</h5>
-<table class="table">
-        <thead><tr>
-<th>my_string</th>
-<th>letter</th>
-<th>result</th>
-</tr>
-</thead>
-        <tbody><tr>
-<td>"abcdef"</td>
-<td>"f"</td>
-<td>"abcde"</td>
-</tr>
-<tr>
-<td>"BCBdbe"</td>
-<td>"B"</td>
-<td>"Cdbe"</td>
-</tr>
-</tbody>
-      </table>
-<hr>
-
-<h5>입출력 예 설명</h5>
-
-<p>입출력 예 #1</p>
-
-<ul>
-<li>"abcdef" 에서 "f"를 제거한 "abcde"를 return합니다.</li>
-</ul>
-
-<p>입출력 예 #2</p>
-
-<ul>
-<li>"BCBdbe" 에서 "B"를 모두 제거한 "Cdbe"를 return합니다.</li>
-</ul>
-
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
