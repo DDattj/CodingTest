@@ -34,17 +34,6 @@ func solution(_ my_string: String, _ letter: String) -> String {
 이렇게 해도 되긴 하는데 다른 더 쉬운 방법이 존재함.
 무엇을 무엇으로 대체해서 출력해달라가 아니라 **출력과정에서 문자를 필터링 해달라**고 요청하면 더 빠르고 코드도 덜 복잡해짐
 ```
-func solution(_ my_string: String, _ letter: String) -> String {
-//걸러낸것을 출력
-    if my_string.contains(letter) {
-        return my_string.replacingOccurrences(of: letter, with: "")
-    } else {
-//예외상황에선 그대로 출력
-        return my_string
-    }
-}
-```
-```
 func solution(_ my_string:String, _ letter:String) -> String {
     return my_string.filter{String($0) != letter}
 }
