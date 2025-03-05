@@ -2,18 +2,6 @@
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120825?language=swift) 
 
-### 성능 요약
-
-메모리: 16.3 MB, 시간: 0.02 ms
-
-### 구분
-
-코딩테스트 연습 > 코딩테스트 입문
-
-### 채점결과
-
-정확성: 100.0<br/>합계: 100.0 / 100.0
-
 ### 제출 일자
 
 2025년 03월 05일 10:14:41
@@ -24,40 +12,32 @@
 
 <hr>
 
-<h5>제한사항</h5>
+### 공부노트
 
-<ul>
-<li>2 ≤ <code>my_string</code> 길이 ≤ 5</li>
-<li>2 ≤ <code>n</code> ≤ 10</li>
-<li>"my_string"은 영어 대소문자로 이루어져 있습니다.</li>
-</ul>
+코드 구성 순서는
+1.문자열의 문자가 각각 어떤것이 있는지 확인
+2.각 문자를 n만큼 반복
+3.문자열을 재조합 해서 리턴
+
+```
+import Foundation
+
+func solution(_ my_string:String, _ n:Int) -> String {
+    var result = ""
+    
+    for char in my_string {
+        for i in 0..<n {
+            result.append(char)
+        }
+    }
+    
+    return result
+}
+```
+**char = character 라는 말로 문자열에서 문자 하나를 말하는것**
+문자열에서 문자열을 n만큼 반복하며 지나간다. 즉 프로세스 처리과정을 보면 abc 라는 문자열이 있고 n이 3이라면
+a ( n이 3번 있으니) aab ( n이 3번 있으니) bbc ( n이 3번 있으니) cc -> aaabbbccc 이렇게 되는것
 
 <hr>
-
-<h5>입출력 예</h5>
-<table class="table">
-        <thead><tr>
-<th>my_string</th>
-<th>n</th>
-<th>result</th>
-</tr>
-</thead>
-        <tbody><tr>
-<td>"hello"</td>
-<td>3</td>
-<td>"hhheeellllllooo"</td>
-</tr>
-</tbody>
-      </table>
-<hr>
-
-<h5>입출력 예 설명</h5>
-
-<p>입출력 예 #1</p>
-
-<ul>
-<li>"hello"의 각 문자를 세 번씩 반복한 "hhheeellllllooo"를 return 합니다.</li>
-</ul>
-
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
